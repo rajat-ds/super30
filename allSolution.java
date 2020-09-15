@@ -63,4 +63,76 @@ public int findDuplicate(int[] nums) {
         nums1[finished--] = nums2[tail2--];
     }
     }
-		
+	
+	
+	
+	//44444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444///
+	
+	///Repeated and missing number
+	
+	//Let x be the missing and y be the repeating element.
+//Let N is the size of array.
+//Get the sum of all numbers using formula S = N(N+1)/2
+//Get product of all numbers using formula Sum_Sq = N(N+1)(2N+1)/6
+//Iterate through a loop from i=1….N
+//S -= A[i]
+//Sum_Sq -= (A[i]*A[i])
+//It will give two equations
+//x-y = S – (1)
+//x^2 – y^2 = Sum_sq
+//x+ y = (Sum_sq/S) – (2)
+	static Vector<Integer> repeatedNumber(int[] A)  
+    { 
+        int len = A.length; 
+        int Sum_N = (len * (len + 1)) / 2; 
+        int Sum_NSq = (len * (len + 1) *  
+                         (2 * len + 1)) / 6; 
+        int missingNumber = 0, repeating = 0; 
+  
+        for (int i = 0; i < A.length; i++)  
+        { 
+            Sum_N -= A[i]; 
+            Sum_NSq -= A[i] * A[i]; 
+        } 
+  
+        missingNumber = (Sum_N + Sum_NSq /  
+                                 Sum_N) / 2; 
+        repeating = missingNumber - Sum_N; 
+        Vector<Integer> ans = new Vector<>(); 
+        ans.add(repeating); 
+        ans.add(missingNumber); 
+        return ans; 
+    } 
+	
+	
+	///5555555555555555555555555555555555555555555555555555555555555555555555///
+	//max sub array///////////////
+
+static void maxSubArraySum(int a[], int size) 
+    { 
+        int max_so_far = Integer.MIN_VALUE, 
+        max_ending_here = 0,start = 0, 
+        end = 0, s = 0; 
+  
+        for (int i = 0; i < size; i++)  
+        { 
+            max_ending_here += a[i]; 
+  
+            if (max_so_far < max_ending_here)  
+            { 
+                max_so_far = max_ending_here; 
+                start = s; 
+                end = i; 
+            } 
+  
+            if (max_ending_here < 0)  
+            { 
+                max_ending_here = 0; 
+                s = i + 1; 
+            } 
+        } 
+        System.out.println("Maximum contiguous sum is " 
+                           + max_so_far); 
+        System.out.println("Starting index " + start); 
+        System.out.println("Ending index " + end); 
+    } 	
