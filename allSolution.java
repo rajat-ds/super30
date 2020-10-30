@@ -452,7 +452,7 @@ class StockBuySell {
 	            // if the element is less then the 
 	            // starting element of that row then 
 	            // search in upper rows else search 
-	            // in the lower rows 
+	            // in the lower rows ss
 	            if (K < matrix[mid][0]) { 
 	                high = mid - 1; 
 	            } 
