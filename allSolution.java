@@ -337,7 +337,7 @@ class StockBuySell {
   
             Interval e = new Interval(); 
             e.buy = i++; 
-            // Store the index of minima 
+            // Store the index of minimum 
   
             // Find Local Maxima.  Note that the limit is (n-1) as we are 
             // comparing to previous element 
