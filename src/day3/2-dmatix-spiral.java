@@ -2,7 +2,7 @@ package day3;
 // Java program to print a given matrix in spiral form 
 import java.io.*; 
   
-class GFG { 
+class twoDMatrixSpiralPrint { 
   
     // Function print matrix in spiral form 
     static void spiralPrint(int m, int n, int a[][]) 
